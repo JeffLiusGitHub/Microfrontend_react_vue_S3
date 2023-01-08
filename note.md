@@ -72,3 +72,110 @@ Husky 是一个 Node.js 包，用于在 Git 项目中添加钩子。您可以使
 
 因此，GitHub Actions 和 Husky 可以用于在 Git 项目中自动执行脚本或工作流程。但是，GitHub Actions 是专为 GitHub 而设计的，而 Husky 可以在任何 Git 项目中使用。
 
+## AWS Setup and Configuration Cheetsheet
+
+This lecture note is not intended to be a replacement for the videos, but to serve as a cheat sheet for students who want to quickly run thru the AWS configuration steps or easily see if they missed a step. It will also help navigate through the changes to the AWS UI since the course was recorded.
+
+S3 Bucket Creation and Configuration
+Go to AWS Management Console and use the search bar to find S3
+
+Click Create Bucket
+
+Specify an AWS Region
+
+Provide unique Bucket Name and click Create Bucket
+
+Click the new Bucket you have created from the Bucket list.
+
+Select Properties
+
+Scroll down to Static website hosting and click Edit
+
+Change to Enable
+
+Enter index.html in the Index document field
+
+Click Save changes
+
+Select Permissions
+
+Click Edit in Block all public access
+
+Untick the Block all public access box.
+
+Click Save changes
+
+Type confirm in the field and click Confirm
+
+Find the Bucket Policy and click Edit
+
+Click Policy generator
+
+Change Policy type to S3 Bucket Policy
+
+Set Principle to \*
+
+Set Action to Get Object
+
+Copy the S3 bucket ARN to add to the ARN field and add /_ to the end.
+eg: arn:aws:s3:::mfe-dashboard/_
+
+Click Add Statement
+
+Click Generate Policy
+
+Copy paste the generated policy text to the Policy editor
+
+Click Save changes
+
+CloudFront setup
+Go to AWS Management Console and use the search bar to find CloudFront
+
+Click Create distribution
+
+Set Origin domain to your S3 bucket
+
+Find the Default cache behavior section and change Viewer protocol policy to Redirect HTTP to HTTPS
+
+Scroll down and click Create Distribution
+
+After Distribution creation has finalized click the Distribution from the list, find its Settings and click Edit
+
+Scroll down to find the Default root object field and enter /container/latest/index.html
+
+Click Save changes
+
+Click Error pages
+
+Click Create custom error response
+
+Change HTTP error code to 403: Forbidden
+
+Change Customize error response to Yes
+
+Set Response page path to /container/latest/index.html
+
+Set HTTP Response Code to 200: OK
+
+Create IAM user
+Go to AWS Management Console and use the search bar to find IAM
+
+In IAM dashboard, click Users in the left sidebar
+
+Click Add Users
+
+Enter a unique name in the User name field
+
+In Select AWS credential type tick Access Key - Programmatic access
+
+Click Next: Permissions
+
+Select Attach existing policies directly
+
+Use search bar to find and tick AmazonS3FullAccess and CloudFrontFullAccess
+
+Click Next: Tags
+
+Click Next: Review
+
+Click Create user

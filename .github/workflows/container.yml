@@ -1,6 +1,6 @@
 name: deploy-container
 
-on: 
+on:
   push:
     branches:
       - master
@@ -14,7 +14,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
@@ -24,4 +24,4 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: ""
+          AWS_DEFAULT_REGION: 'ap-southeast-2'
