@@ -54,5 +54,21 @@ Amazon S3（Simple Storage Service）是一项云存储服务，用户可以使�
 
 ## CDN
 
-Content Delivery Network（CDN）是一种分布式网络，它可以使网站内容从最近的服务器节点获取，从而为用户提供更快的访问速度。 CDN通常由许多边缘服务器组成，这些服务器被分布在全球各地，可以为用户提供优质的网络体验。CDN通常用于加载静态内容，例如图像、视频、文件等，但也可以用于加载动态内容。 CDN可以帮助网站减少流量和带宽使用，提高网站的可用性和安全性。
+Content Delivery Network（CDN）是一种分布式网络，它可以使网站内容从最近的服务器节点获取，从而为用户提供更快的访问速度。 CDN 通常由许多边缘服务器组成，这些服务器被分布在全球各地，可以为用户提供优质的网络体验。CDN 通常用于加载静态内容，例如图像、视频、文件等，但也可以用于加载动态内容。 CDN 可以帮助网站减少流量和带宽使用，提高网站的可用性和安全性。
+
+## HtmlwebpackPlugin
+
+HtmlWebpackPlugin 是 Webpack 插件，用于生成 HTML 文件并将打包后的 JavaScript 文件注入 HTML 文件中。
+
+在上述代码中，插件会使用 public/index.html 作为模板，并将打包后的 JavaScript 文件注入模板中。
+
+这意味着，如果您有一个单独的 HTML 文件，它可以用作您的项目的入口点，并且您希望打包后的 JavaScript 文件能够在 HTML 文件中被加载，那么 HtmlWebpackPlugin 可能会很有用。
+
+## github action vs husky
+
+GitHub Actions 是 GitHub 的一项功能，可以让您在推送代码、发布版本、或者更新项目时自动运行工作流程。您可以使用 GitHub Actions 来自动构建、测试、部署代码，或者进行其他自动化任务。
+
+Husky 是一个 Node.js 包，用于在 Git 项目中添加钩子。您可以使用 Husky 来在推送代码或执行其他 Git 操作时自动运行脚本。
+
+因此，GitHub Actions 和 Husky 可以用于在 Git 项目中自动执行脚本或工作流程。但是，GitHub Actions 是专为 GitHub 而设计的，而 Husky 可以在任何 Git 项目中使用。
 
