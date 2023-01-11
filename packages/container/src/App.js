@@ -8,7 +8,7 @@ const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const DashboardLazy = lazy(() => import('./components/DashboardApp'));
 const generateClassName = createGenerateClassName({
-	productionPrefix: 'contain',
+	productionPrefix: 'co',
 }); //prefix generate different css name in case css influence other page
 const history = createBrowserHistory();
 const App = () => {
